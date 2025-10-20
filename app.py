@@ -27,49 +27,112 @@ st.set_page_config(
 # ---------- CSS / THEME ----------
 st.markdown("""
 <style>
-:root{
-    --bg:#000000;
-    --panel:#0f1113;
-    --accent:#00ff99;
-    --muted:#7fffd4;
-    --glass: rgba(255,255,255,0.03);
+:root {
+    --bg: #000000; /* noir total */
+    --panel: #0c0c0c;
+    --accent: #00ffcc; /* vert-bleu fluo vif */
+    --accent-2: #00b3ff; /* bleu cyan */
+    --text: #d0fff0;
+    --muted: #88ffcc;
+    --danger: #ff0040;
 }
-html, body, [class*="css"]  {
-    background: radial-gradient(circle at 10% 10%, rgba(0,0,0,0.02), transparent 10%),
-                radial-gradient(circle at 90% 90%, rgba(0,255,153,0.02), transparent 10%),
+
+/* FOND ET TEXTE GÉNÉRAL */
+html, body, [class*="css"] {
+    background: radial-gradient(circle at 15% 15%, rgba(0,255,204,0.04), transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(0,179,255,0.04), transparent 40%),
                 var(--bg) !important;
-    color: var(--accent);
-    font-family: "Source Code Pro", "Courier New", monospace;
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
 }
+
+/* TITRES */
+h1, h2, h3, .big-title {
+    color: var(--accent);
+    text-shadow: 0 0 8px rgba(0,255,204,0.6);
+}
+.big-title {
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* SÉPARATEURS */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    margin: 18px 0;
+}
+
+/* CARTES */
+.card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(0,255,204,0.15);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,255,204,0.05);
+    transition: all 0.3s ease-in-out;
+}
+.card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0,255,204,0.2);
+}
+
+/* TAGS */
+.tag {
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:999px;
+    border:1px solid rgba(0,255,204,0.3);
+    background: rgba(0,255,204,0.05);
+    margin-right:6px;
+    font-size:13px;
+    color: var(--accent);
+    text-shadow: 0 0 4px rgba(0,255,204,0.5);
+}
+
+/* BOUTONS */
 .stButton>button {
-    background: transparent;
+    background: linear-gradient(90deg, #001a14, #002a22);
     border: 1px solid var(--accent);
     color: var(--accent);
-    padding: 6px 12px;
-    border-radius: 8px;
+    border-radius: 10px;
+    padding: 8px 18px;
+    transition: all 0.2s;
+    font-weight: bold;
 }
 .stButton>button:hover {
     background: var(--accent);
-    color: #0b0b0b;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0,255,204,0.8);
 }
-.big-title { font-size: 42px; font-weight: 700; letter-spacing: 1px; color: var(--accent);}
-.subtle { color: #9ef6c9; opacity: 0.9;}
-.card {
-    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
-    border: 1px solid rgba(0,255,153,0.08);
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+
+/* ALERTES / INFOS */
+.stAlert {
+    border-left: 4px solid var(--accent);
+    background: rgba(0,255,204,0.05);
 }
-.tag {
-    display:inline-block;
-    padding:4px 9px;
-    border-radius:999px;
-    border:1px solid rgba(0,255,153,0.12);
-    margin-right:6px;
-    font-size:13px;
+
+/* LIENS */
+a {
+    color: var(--accent-2);
+    text-decoration: none;
 }
-hr { border: 0; height: 1px; background: rgba(0,0,0,0.06); margin: 12px 0 18px 0; }
+a:hover {
+    color: var(--accent);
+    text-shadow: 0 0 6px var(--accent);
+}
+
+/* FOOTER */
+footer {
+    color: var(--muted);
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.7;
+}
 </style>
 """, unsafe_allow_html=True)
 
