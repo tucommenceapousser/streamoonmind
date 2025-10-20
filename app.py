@@ -6,7 +6,7 @@ from datetime import datetime
 # ---------- CONFIG ----------
 st.set_page_config(
     page_title="Compagnie MoonMind Anonymous",
-    page_icon="🌙",
+    page_icon="😈",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -116,13 +116,17 @@ if page == "Accueil":
 # ---------- LOGO SOUS LE TITRE ----------
 # Remplace "logo_top.png" par le chemin ou l'URL de ton logo principal
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.image("logo1.png", width=150, caption="Logo partenaire 1")
+    st.image("logo1.jpg", width=150, caption="Logo partenaire 1")
 
 with col2:
-    st.image("logo2.png", width=150, caption="Logo partenaire 2")
+    st.image("logo2.jpeg", width=150, caption="Logo partenaire 2")
+
+with col1:
+    st.image("logo.jpeg", width=150, caption="Logo partenaire 3")
+
     # Terminal-like animated intro
     html(
         """
