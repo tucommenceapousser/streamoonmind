@@ -4,6 +4,19 @@ from streamlit.components.v1 import html
 from datetime import datetime
 
 # ---------- CONFIG ----------
+# ---------- META TAGS (pour preview réseaux sociaux) ----------
+st.markdown("""
+<meta property="og:title" content="Compagnie MoonMind Anonymous">
+<meta property="og:description" content="Collectif de hackers éthiques et créatifs, dédié à la sensibilisation numérique et à la protection de la vie privée.">
+<meta property="og:image" content="/logo2.jpeg">
+<meta property="og:url" content="https://moonmind.streamlit.app">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compagnie MoonMind Anonymous">
+<meta name="twitter:description" content="Collectif de hackers éthiques et créatifs, dédié à la sensibilisation numérique et à la protection de la vie privée.">
+<meta name="twitter:image" content="/logo2.jpeg">
+""", unsafe_allow_html=True)
 st.set_page_config(
     page_title="Compagnie MoonMind Anonymous",
     page_icon="😈",
