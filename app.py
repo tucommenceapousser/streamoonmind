@@ -127,43 +127,43 @@ with col2:
 with col3:
     st.image("logo.jpeg", width=150, caption="Logo partenaire 3")
 
-    # Terminal-like animated intro
-    html(
-        """
-        <div style="background:#071017; padding:14px; border-radius:10px; border:1px solid rgba(0,255,153,0.06); font-family: monospace;">
-        <pre id="term" style="white-space:pre-wrap; color:#9ef6c9; margin:0;"></pre>
-        </div>
-        <script>
-        const lines = [
-          "Bienvenue dans la Compagnie MoonMind Anonymous...",
-          "Nous explorons, éduquons et protégeons la liberté numérique.",
-          "Hacking éthique, open-source, et actions de sensibilisation.",
-          "Respect de la loi et responsabilité sont nos priorités."
-        ];
-        let idx = 0;
-        let pos = 0;
-        let out = '';
-        function type(){
-          if(idx < lines.length){
-            if(pos < lines[idx].length){
-              out += lines[idx][pos++];
-              document.getElementById('term').innerText = out + "_";
-              setTimeout(type, 28);
-            } else {
-              out += "\\n";
-              idx++;
-              pos = 0;
-              setTimeout(type, 400);
-            }
-          } else {
-            document.getElementById('term').innerText = out;
-          }
+# Terminal-like animated intro (en dehors du with col3)
+html(
+    """
+    <div style="background:#071017; padding:14px; border-radius:10px; border:1px solid rgba(0,255,153,0.06); font-family: monospace;">
+    <pre id="term" style="white-space:pre-wrap; color:#9ef6c9; margin:0;"></pre>
+    </div>
+    <script>
+    const lines = [
+      "Bienvenue dans la Compagnie MoonMind Anonymous...",
+      "Nous explorons, éduquons et protégeons la liberté numérique.",
+      "Hacking éthique, open-source, et actions de sensibilisation.",
+      "Respect de la loi et responsabilité sont nos priorités."
+    ];
+    let idx = 0;
+    let pos = 0;
+    let out = '';
+    function type(){
+      if(idx < lines.length){
+        if(pos < lines[idx].length){
+          out += lines[idx][pos++];
+          document.getElementById('term').innerText = out + "_";
+          setTimeout(type, 28);
+        } else {
+          out += "\\n";
+          idx++;
+          pos = 0;
+          setTimeout(type, 400);
         }
-        type();
-        </script>
-        """,
-        height=180
-    )
+      } else {
+        document.getElementById('term').innerText = out;
+      }
+    }
+    type();
+    </script>
+    """,
+    height=180
+)
 
     st.markdown("### Qui sommes‑nous ?")
     st.markdown(
