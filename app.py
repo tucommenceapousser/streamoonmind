@@ -12,81 +12,68 @@ st.set_page_config(
 )
 
 # ---------- CSS / THEME ----------
-st.markdown(
-    """
-    <style>
-    :root{
-        --bg:#060606;
-        --panel:#0f1113;
-        --accent:#00ff99;
-        --muted:#7fffd4;
-        --glass: rgba(255,255,255,0.03);
-    }
-    html, body, [class*="css"]  {
-        background: radial-gradient(circle at 10% 10%, rgba(0,255,153,0.02), transparent 10%),
-                    radial-gradient(circle at 90% 90%, rgba(0,255,153,0.02), transparent 10%),
-                    var(--bg) !important;
-        color: var(--accent);
-        font-family: "Source Code Pro", "Courier New", monospace;
-    }
-    .stButton>button {
-        background: transparent;
-        border: 1px solid var(--accent);
-        color: var(--accent);
-        padding: 6px 12px;
-        border-radius: 8px;
-    }
-    .stButton>button:hover {
-        background: var(--accent);
-        color: #0b0b0b;
-    }
-    .big-title {
-        font-size: 42px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        color: var(--accent);
-    }
-    .subtle {
-        color: #9ef6c9;
-        opacity: 0.9;
-    }
-    .card {
-        background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
-        border: 1px solid rgba(0,255,153,0.08);
-        padding: 16px;
-        border-radius: 12px;
-        box-shadow: 0 6px 30px rgba(0,0,0,0.6);
-    }
-    .tag {
-        display:inline-block;
-        padding:4px 9px;
-        border-radius:999px;
-        border:1px solid rgba(0,255,153,0.12);
-        margin-right:6px;
-        font-size:13px;
-    }
-    hr { border: 0; height: 1px; background: rgba(0,255,153,0.06); margin: 12px 0 18px 0; }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+st.markdown("""
+<style>
+:root{
+    --bg:#060606;
+    --panel:#0f1113;
+    --accent:#00ff99;
+    --muted:#7fffd4;
+    --glass: rgba(255,255,255,0.03);
+}
+html, body, [class*="css"]  {
+    background: radial-gradient(circle at 10% 10%, rgba(0,255,153,0.02), transparent 10%),
+                radial-gradient(circle at 90% 90%, rgba(0,255,153,0.02), transparent 10%),
+                var(--bg) !important;
+    color: var(--accent);
+    font-family: "Source Code Pro", "Courier New", monospace;
+}
+.stButton>button {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+.stButton>button:hover {
+    background: var(--accent);
+    color: #0b0b0b;
+}
+.big-title { font-size: 42px; font-weight: 700; letter-spacing: 1px; color: var(--accent);}
+.subtle { color: #9ef6c9; opacity: 0.9;}
+.card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+    border: 1px solid rgba(0,255,153,0.08);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+}
+.tag {
+    display:inline-block;
+    padding:4px 9px;
+    border-radius:999px;
+    border:1px solid rgba(0,255,153,0.12);
+    margin-right:6px;
+    font-size:13px;
+}
+hr { border: 0; height: 1px; background: rgba(0,255,153,0.06); margin: 12px 0 18px 0; }
+</style>
+""", unsafe_allow_html=True)
 
 # ---------- Helper: sample OPs ----------
 def default_ops():
     return [
-        {
-            "title": "#opvendetta",
-            "description": "Campagne de sensibilisation et d'exposition publique visant à dénoncer des pratiques perçues comme injustes. (Description informative — aucun détail opérationnel fourni.)",
-            "tags": ["dénonciation", "sensibilisation"],
-            "status": "Active",
-            "created": "2025-10-20"
+        {"title": "#opvendetta",
+         "description": "Campagne de sensibilisation et d'exposition publique visant à dénoncer des pratiques perçues comme injustes. (Description informative — aucun détail opérationnel fourni.)",
+         "tags": ["dénonciation", "sensibilisation"],
+         "status": "Active",
+         "created": "2025-10-20"
         },
-        {
-            "title": "#opprivacy",
-            "description": "Actions de sensibilisation autour de la protection de la vie privée en ligne et la promotion d'outils de chiffrement (activités éthiques, éducatives).",
-            "tags": ["vie privée", "éducation"],
-            "status": "En pause",
-            "created": "2025-09-01"
+        {"title": "#opprivacy",
+         "description": "Actions de sensibilisation autour de la protection de la vie privée en ligne et la promotion d'outils de chiffrement (activités éthiques, éducatives).",
+         "tags": ["vie privée", "éducation"],
+         "status": "En pause",
+         "created": "2025-09-01"
         }
     ]
 
@@ -94,11 +81,17 @@ if "ops" not in st.session_state:
     st.session_state.ops = default_ops()
 
 # ---------- SIDEBAR NAV ----------
-st.sidebar.markdown("<div class='card'><div style='display:flex; align-items:center; gap:10px;'>"
-                    "<div style='font-size:28px'>🌙</div>"
-                    "<div><div style='font-weight:700'>Compagnie MoonMind Anonymous</div>"
-                    "<div class='subtle' style='font-size:12px'>Collectif — Hacking éthique & sensibilisation</div></div>"
-                    "</div></div>", unsafe_allow_html=True)
+st.sidebar.markdown("""
+<div class='card'>
+<div style='display:flex; align-items:center; gap:10px;'>
+    <div style='font-size:28px'>😈</div>
+    <div>
+        <div style='font-weight:700'>Compagnie MoonMind Anonymous</div>
+        <div class='subtle' style='font-size:12px'>Collectif — Hacking éthique & sensibilisation</div>
+    </div>
+</div>
+</div>
+""", unsafe_allow_html=True)
 
 page = st.sidebar.selectbox("Navigation", ["Accueil", "Qu'est‑ce qu'Anonymous ?", "OPs en cours", "Ajouter une OP", "Mentions / Éthique"])
 
@@ -107,29 +100,25 @@ st.sidebar.markdown("**Année**: 2025  •  **Style**: Hacker • Interface dém
 st.sidebar.markdown("---")
 st.sidebar.caption("Cette interface est une présentation. Ne diffusez pas d'instructions illégales ni ne coordonnez d'activités illicites via cet outil.")
 
-# ---------- HEADER ----------
+# ---------- HEADER + LOGOS + ANIMATION ----------
 if page == "Accueil":
+    # Logo principal
     st.image("logo.png", width=180, caption="Logo officiel de MoonMind Anonymous", use_column_width=False)
-    st.markdown("<div class='big-title'>🌙 Compagnie MoonMind Anonymous</div>", unsafe_allow_html=True)
+    st.markdown("<div class='big-title'>😈 Compagnie MoonMind Anonymous</div>", unsafe_allow_html=True)
     st.markdown("**Le collectif des esprits libres, hackers éthiques et créatifs.**")
     st.markdown("---")
-# ---------- LOGO SOUS LE TITRE ----------
-# Remplace "logo_top.png" par le chemin ou l'URL de ton logo principal
 
-col1, col2, col3 = st.columns(3)
+    # Trois logos partenaires côte à côte
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.image("logo1.jpg", width=150, caption="Logo partenaire 1")
+    with col2:
+        st.image("logo2.jpeg", width=150, caption="Logo partenaire 2")
+    with col3:
+        st.image("logo3.jpeg", width=150, caption="Logo partenaire 3")
 
-with col1:
-    st.image("logo1.jpg", width=150, caption="Logo partenaire 1")
-
-with col2:
-    st.image("logo2.jpeg", width=150, caption="Logo partenaire 2")
-
-with col3:
-    st.image("logo.jpeg", width=150, caption="Logo partenaire 3")
-
-# Terminal-like animated intro (en dehors du with col3)
-html(
-    """
+    # Terminal-like animated intro
+    html("""
     <div style="background:#071017; padding:14px; border-radius:10px; border:1px solid rgba(0,255,153,0.06); font-family: monospace;">
     <pre id="term" style="white-space:pre-wrap; color:#9ef6c9; margin:0;"></pre>
     </div>
@@ -161,24 +150,26 @@ html(
     }
     type();
     </script>
-    """,
-    height=180
-)
+    """, height=180)
 
+    # Présentation
     st.markdown("### Qui sommes‑nous ?")
-    st.markdown(
-        """
-        Compagnie MoonMind Anonymous est une entité créative s'inspirant des traditions du hacktivisme afin de promouvoir
-        la sensibilisation numérique, la protection de la vie privée et l'accès à l'information. Nous favorisons l'éthique,
-        l'éducation, et l'usage responsable des technologies.
-        """
-    )
+    st.markdown("""
+    Compagnie MoonMind Anonymous est une entité créative s'inspirant des traditions du hacktivisme afin de promouvoir
+    la sensibilisation numérique, la protection de la vie privée et l'accès à l'information. Nous favorisons l'éthique,
+    l'éducation, et l'usage responsable des technologies.
+    """)
     st.markdown("---")
-    col1, col2 = st.columns([2,1])
 
+    col1, col2 = st.columns([2,1])
     with col1:
         st.markdown("#### Nos activités (exemples)")
-        st.markdown("- Ateliers d'éducation à la cybersécurité\n- Publication d'outils open-source pédagogiques\n- Campagnes de sensibilisation sur la protection des données\n- Recherche et partage de bonnes pratiques")
+        st.markdown(
+            "- Ateliers d'éducation à la cybersécurité\n"
+            "- Publication d'outils open-source pédagogiques\n"
+            "- Campagnes de sensibilisation sur la protection des données\n"
+            "- Recherche et partage de bonnes pratiques"
+        )
     with col2:
         st.markdown("#### Statut")
         st.markdown("<div class='card'><b>Collectif</b><br><span class='subtle'>Actif — axé sur l'éducation</span></div>", unsafe_allow_html=True)
@@ -187,37 +178,29 @@ html(
 elif page == "Qu'est‑ce qu'Anonymous ?":
     st.markdown("<div class='big-title'>❓ Qu'est‑ce qu'Anonymous ?</div>", unsafe_allow_html=True)
     st.markdown("---")
-    st.markdown(
-        """
-        **Anonymous** est un terme utilisé pour décrire un ensemble décentralisé de personnes, groupes et acteurs en ligne
-        partageant parfois des objectifs communs — souvent liés à la liberté d'information, la vie privée, et des actions de protestation.
-        Il n'existe pas d'organisation centrale, de hiérarchie officielle, ni de structure formelle unique.
-        """
-    )
-    st.info(
-        """
-        Historique / contexte :
-        - Origines sur des forums et communautés en ligne (ex. 4chan) ; adoption du masque de Guy Fawkes comme symbole.
-        - Actions variées : campagnes de sensibilisation, divulgations d'information, opérations de protestation en ligne.
-        - Diversité d'acteurs : allant d'activistes pacifiques à des individus ayant commis des actes illégaux.
-        """
-    )
+    st.markdown("""
+    **Anonymous** est un terme utilisé pour décrire un ensemble décentralisé de personnes, groupes et acteurs en ligne
+    partageant parfois des objectifs communs — souvent liés à la liberté d'information, la vie privée, et des actions de protestation.
+    Il n'existe pas d'organisation centrale, de hiérarchie officielle, ni de structure formelle unique.
+    """)
+    st.info("""
+    Historique / contexte :
+    - Origines sur des forums et communautés en ligne (ex. 4chan) ; adoption du masque de Guy Fawkes comme symbole.
+    - Actions variées : campagnes de sensibilisation, divulgations d'information, opérations de protestation en ligne.
+    - Diversité d'acteurs : allant d'activistes pacifiques à des individus ayant commis des actes illégaux.
+    """)
     st.markdown("#### Notions importantes")
-    st.markdown(
-        """
-        - **Décenralisation** : pas de chef unique.  
-        - **Symbolisme** : le masque de Guy Fawkes est un symbole culturel.  
-        - **Ambiguïté éthique** : certaines actions ont visées l'intérêt public, d'autres ont enfreint la loi.  
-        - **Responsabilité** : s'inspirer d'idéaux ne justifie pas des actions illégales — privilégier l'éducation et la légalité.
-        """
-    )
+    st.markdown("""
+    - **Décenralisation** : pas de chef unique.  
+    - **Symbolisme** : le masque de Guy Fawkes est un symbole culturel.  
+    - **Ambiguïté éthique** : certaines actions ont visées l'intérêt public, d'autres ont enfreint la loi.  
+    - **Responsabilité** : s'inspirer d'idéaux ne justifie pas des actions illégales — privilégier l'éducation et la légalité.
+    """)
     st.markdown("---")
-    st.warning(
-        """
-        Cette page explique le phénomène de manière informative. **Nous ne promouvons ni n'encourageons la commission d'actes illégaux.**
-        Si vous êtes intéressé par la cybersécurité, formez‑vous, agissez de manière éthique, et respectez la loi.
-        """
-    )
+    st.warning("""
+    Cette page explique le phénomène de manière informative. **Nous ne promouvons ni n'encourageons la commission d'actes illégaux.**
+    Si vous êtes intéressé par la cybersécurité, formez‑vous, agissez de manière éthique, et respectez la loi.
+    """)
 
 # ---------- OPS ----------
 elif page == "OPs en cours":
@@ -226,6 +209,7 @@ elif page == "OPs en cours":
     st.markdown(
         "Sur cette page sont listées des **opérations / campagnes** présentées à titre informatif. Aucune instruction opérationnelle n'est fournie."
     )
+
     # filters
     status_filter = st.selectbox("Filtrer par statut", ["Tous", "Active", "En pause", "Archivée"])
     tag_filter = st.text_input("Filtrer par tag (ex: sensibilisation, vie privée)", "")
@@ -238,7 +222,7 @@ elif page == "OPs en cours":
                     f"<hr>"
                     f"<div style='margin-top:6px'>{op['description']}</div>"
                     f"<div style='margin-top:10px'>"
-                    + " ".join([f"<span class='tag'>{t}</span>" for t in op.get('tags', [])])
+                    + " ".join([f"<span class='tag'>{t}</span>" for t in op.get("tags", [])])
                     + "</div></div>", unsafe_allow_html=True)
 
     any_shown = False
@@ -259,9 +243,7 @@ elif page == "Ajouter une OP":
     st.markdown("<div class='big-title'>➕ Ajouter une OP (mockup)</div>", unsafe_allow_html=True)
     st.markdown("---")
     st.markdown(
-        """
-        Formulaire d'ajout **local** (stockage en session uniquement). **Ne partagez pas d'informations qui faciliteraient des actions illégales.**
-        """
+        "Formulaire d'ajout **local** (stockage en session uniquement). **Ne partagez pas d'informations qui faciliteraient des actions illégales.**"
     )
     with st.form("add_op"):
         title = st.text_input("Titre (ex: #opvendetta)", value="#opnouvelle")
@@ -285,14 +267,12 @@ elif page == "Ajouter une OP":
 elif page == "Mentions / Éthique":
     st.markdown("<div class='big-title'>📜 Mentions & Éthique</div>", unsafe_allow_html=True)
     st.markdown("---")
-    st.markdown(
-        """
-        **Avertissement légal & éthique**  
-        Cette interface est conçue pour la présentation et l'éducation. Toute action en ligne doit respecter la loi.
-        Si vous souhaitez apprendre la cybersécurité : suivez des formations reconnues, travaillez dans des environnements de test (labs),
-        et adoptez une démarche responsable (responsible disclosure).
-        """
-    )
+    st.markdown("""
+    **Avertissement légal & éthique**  
+    Cette interface est conçue pour la présentation et l'éducation. Toute action en ligne doit respecter la loi.
+    Si vous souhaitez apprendre la cybersécurité : suivez des formations reconnues, travaillez dans des environnements de test (labs),
+    et adoptez une démarche responsable (responsible disclosure).
+    """)
     st.markdown("#### Ressources recommandées")
     st.markdown("- OWASP (sécurité applicative)\n- Cours et certifications en cybersécurité\n- Communautés d'open-source et projets éducatifs")
     st.markdown("---")
