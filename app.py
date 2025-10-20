@@ -28,7 +28,7 @@ st.set_page_config(
 st.markdown("""
 <style>
 :root{
-    --bg:#060606;
+    --bg:#000000;
     --panel:#0f1113;
     --accent:#00ff99;
     --muted:#7fffd4;
