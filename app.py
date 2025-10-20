@@ -124,7 +124,7 @@ with col1:
 with col2:
     st.image("logo2.jpeg", width=150, caption="Logo partenaire 2")
 
-with col1:
+with col3:
     st.image("logo.jpeg", width=150, caption="Logo partenaire 3")
 
     # Terminal-like animated intro
