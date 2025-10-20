@@ -69,7 +69,7 @@ html, body, [class*="css"]  {
     margin-right:6px;
     font-size:13px;
 }
-hr { border: 0; height: 1px; background: rgba(0,255,153,0.06); margin: 12px 0 18px 0; }
+hr { border: 0; height: 1px; background: rgba(0,0,0,0.06); margin: 12px 0 18px 0; }
 </style>
 """, unsafe_allow_html=True)
 
