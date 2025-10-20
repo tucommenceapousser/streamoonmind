@@ -28,14 +28,14 @@ st.set_page_config(
 st.markdown("""
 <style>
 :root{
-    --bg:#00000;
+    --bg:#000000;
     --panel:#0f1113;
     --accent:#00ff99;
     --muted:#7fffd4;
     --glass: rgba(255,255,255,0.03);
 }
 html, body, [class*="css"]  {
-    background: radial-gradient(circle at 10% 10%, rgba(0,255,153,0.02), transparent 10%),
+    background: radial-gradient(circle at 10% 10%, rgba(0,0,0,0.02), transparent 10%),
                 radial-gradient(circle at 90% 90%, rgba(0,255,153,0.02), transparent 10%),
                 var(--bg) !important;
     color: var(--accent);
