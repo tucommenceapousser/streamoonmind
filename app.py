@@ -168,7 +168,7 @@ if page == "Accueil":
     # Présentation
     st.markdown("### Qui sommes‑nous ?")
     st.markdown("""
-    Compagnie MoonMind Anonymous est une entité créative s'inspirant des traditions du hacktivisme afin de promouvoir
+    Compagnie MoonMind Anonymous est une entité créative s'inspirant des traditions de l'hacktivisme afin de promouvoir
     la sensibilisation numérique, la protection de la vie privée et l'accès à l'information. Nous favorisons l'éthique,
     l'éducation, et l'usage responsable des technologies.
     """)
@@ -289,8 +289,8 @@ elif page == "Mentions / Éthique":
     st.markdown("#### Ressources recommandées")
     st.markdown("- OWASP (sécurité applicative)\n- Cours et certifications en cybersécurité\n- Communautés d'open-source et projets éducatifs")
     st.markdown("---")
-    st.caption("© 2025 Compagnie MoonMind Anonymous — Présentation démo. Respectez la législation locale et l'éthique numérique.")
+    st.caption("© 2025 Compagnie MoonMind Anonymous — Respectez la législation locale et l'éthique numérique.")
 
 # ---------- FOOTER ----------
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<div style='font-size:12px; color:#8fffc6'>Compagnie MoonMind Anonymous — Interface démo. Pour usages éducatifs uniquement.</div>", unsafe_allow_html=True)
+st.markdown("<div style='font-size:12px; color:#8fffc6'>Compagnie MoonMind Anonymous — Pour usages éducatifs uniquement.</div>", unsafe_allow_html=True)
