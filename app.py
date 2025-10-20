@@ -356,4 +356,4 @@ elif page == "Mentions / Éthique":
 
 # ---------- FOOTER ----------
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<div style='font-size:12px; color:#8fffc6'>Compagnie MoonMind Anonymous — Pour usages éducatifs uniquement.</div>", unsafe_allow_html=True)
+st.markdown("<div style='font-size:12px; color:#8fffc6'>Compagnie MoonMind Anonymous - Upgrade your MindSet — Pour usages éducatifs uniquement.</div>", unsafe_allow_html=True)
