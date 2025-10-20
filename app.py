@@ -116,7 +116,7 @@ st.sidebar.caption("Cette interface est une présentation. Ne diffusez pas d'ins
 # ---------- HEADER + LOGOS + ANIMATION ----------
 if page == "Accueil":
     # Logo principal
-    st.image("logo1.jpeg", width=180, caption="Logo officiel de MoonMind Anonymous", use_container_width=True, width='stretch')
+    st.image("logo1.jpeg", width='stretch', caption="Logo officiel de MoonMind Anonymous", use_container_width=True)
     st.markdown("<div class='big-title'>😈 Compagnie MoonMind Anonymous</div>", unsafe_allow_html=True)
     st.markdown("**Le collectif des esprits libres, hackers éthiques et créatifs.**")
     st.markdown("---")
